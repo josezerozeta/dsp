@@ -66,11 +66,11 @@ class ExpressionPrinter:
         self.buffer = []
 
     @visitor(DoubleExpression)
-    def visit(self, double_exp: DoubleExpression):
+    def visit(self, double_exp):
         self.buffer.append(str(double_exp.value))
 
     @visitor(AdditionExpression)
-    def visit(self, addition_exp: AdditionExpression):
+    def visit(self, addition_exp):
         self.buffer.append('(')
         addition_exp.left.accept(self)
         self.buffer.append('+')
